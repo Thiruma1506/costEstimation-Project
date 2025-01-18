@@ -31,4 +31,5 @@ public class NewConstruction {
 
     // Getters and setters
     // Constructors
+    
 }
