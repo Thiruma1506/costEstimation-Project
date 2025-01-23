@@ -1,4 +1,4 @@
-package com.example.apiGateway.com.example.apiGateway.Controller;
+package com.example.apiGateway.Controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
