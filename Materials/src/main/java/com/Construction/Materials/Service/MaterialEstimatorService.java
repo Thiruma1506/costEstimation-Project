@@ -109,6 +109,7 @@ public class MaterialEstimatorService {
             return totalCost;
         }
 
+        @SuppressWarnings("unused")
         public void setTotalCost(Double totalCost) {
             this.totalCost = totalCost;
         }
