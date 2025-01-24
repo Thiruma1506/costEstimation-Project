@@ -1,27 +1,34 @@
 package com.example.userLogin.Service;
 
-import com.example.userLogin.Entity.User;
-import com.example.userLogin.Repository.userRepo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.Optional;
+import com.example.userLogin.Entity.User;
+import com.example.userLogin.Util.AuthUtil;
 
 @Service
 public class UserService {
-    @Autowired
-    private userRepo userRepository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final RestTemplate restTemplate;
 
-    public User saveUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return userRepository.save(user);
+    public UserService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
     }
 
-    public Optional<User> findByUsername(String username) {
-        return userRepository.findByUsername(username);
+    public ResponseEntity<User> registerUser(User user) {
+        String url = "http://localhost:8079/api/users/register";
+
+        HttpHeaders headers = new HttpHeaders();
+        String encodedCredentials = AuthUtil.encodeCredentials("admin", "admin");
+        headers.set("Authorization", "Basic " + encodedCredentials);
+        headers.set("Content-Type", "application/json");
+
+        HttpEntity<User> request = new HttpEntity<>(user, headers);
+
+        return restTemplate.exchange(url, HttpMethod.POST, request, User.class);
     }
 }
