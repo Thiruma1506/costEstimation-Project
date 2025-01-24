@@ -1,6 +1,6 @@
-package com.ConstructionCalculator.CostEstimator.Model;
+package com.example.CostEstimaton.Model;
 
-import com.ConstructionCalculator.CostEstimator.Config.CustomDoubleSerializer;
+import com.example.CostEstimaton.Config.CustomDoubleSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import jakarta.persistence.Entity;

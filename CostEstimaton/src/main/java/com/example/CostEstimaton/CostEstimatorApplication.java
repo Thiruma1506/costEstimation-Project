@@ -1,4 +1,4 @@
-package com.ConstructionCalculator.CostEstimator;
+package com.example.CostEstimaton;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

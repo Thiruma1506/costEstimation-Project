@@ -12,3 +12,7 @@ public class AppConfig {
         return new RestTemplate();
     }
 }
+
+// .requestMatchers("/api/users/register").permitAll()
+// .requestMatchers("/api/inputs/**").hasRole("USER")
+// .requestMatchers("/api/admin/**").hasRole("ADMIN")

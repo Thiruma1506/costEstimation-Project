@@ -1,4 +1,4 @@
-package com.ConstructionCalculator.CostEstimator.Controller;
+package com.example.CostEstimaton.Controller;
 
 
 
@@ -44,6 +44,7 @@ package com.ConstructionCalculator.CostEstimator.Controller;
 //         return ResponseEntity.ok(costEstimateService.getAllEstimates());
 //     }
 
+import com.example.CostEstimaton.Service.CostEstimateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,8 +52,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ConstructionCalculator.CostEstimator.Model.CostEstimate;
-import com.ConstructionCalculator.CostEstimator.Service.CostEstimateService;
+import com.example.CostEstimaton.Model.CostEstimate;
 
 @RestController
 @RequestMapping("/api/cost-estimates")

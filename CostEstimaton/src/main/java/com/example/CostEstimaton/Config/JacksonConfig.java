@@ -1,4 +1,4 @@
-package com.ConstructionCalculator.CostEstimator.Config;
+package com.example.CostEstimaton.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

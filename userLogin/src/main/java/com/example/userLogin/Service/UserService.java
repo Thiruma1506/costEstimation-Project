@@ -1,34 +1,46 @@
 package com.example.userLogin.Service;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import com.example.userLogin.Entity.User;
-import com.example.userLogin.Util.AuthUtil;
+import com.example.userLogin.Repository.userRepo;
 
 @Service
 public class UserService {
+	
+	@Autowired
+	private JWTservice jwtservice;
+	
+	@Autowired
+	private AuthenticationManager authManager;
+	
+	@Autowired
+	private userRepo repo;
+	
+	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
+	
+	public User adduser(User user) {
+		
+		user.setPassword(encoder.encode(user.getPassword()));
+		repo.save(user);
+		return user;
+	}
 
-    private final RestTemplate restTemplate;
-
-    public UserService(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
-
-    public ResponseEntity<User> registerUser(User user) {
-        String url = "http://localhost:8079/api/users/register";
-
-        HttpHeaders headers = new HttpHeaders();
-        String encodedCredentials = AuthUtil.encodeCredentials("admin", "admin");
-        headers.set("Authorization", "Basic " + encodedCredentials);
-        headers.set("Content-Type", "application/json");
-
-        HttpEntity<User> request = new HttpEntity<>(user, headers);
-
-        return restTemplate.exchange(url, HttpMethod.POST, request, User.class);
-    }
+	public String verify(User user) {
+		
+		Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword()));
+	
+		if(authentication.isAuthenticated()) {
+			return jwtservice.generateToken(user.getUsername());
+		}
+		return "fail";
+	}
+	
+	
 }

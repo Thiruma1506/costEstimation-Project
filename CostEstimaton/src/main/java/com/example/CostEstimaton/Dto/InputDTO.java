@@ -1,4 +1,4 @@
-package com.ConstructionCalculator.CostEstimator.Dto;
+package com.example.CostEstimaton.Dto;
 
 
 public class InputDTO {

@@ -1,4 +1,4 @@
-package com.ConstructionCalculator.CostEstimator;
+package com.example.CostEstimaton;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.ConstructionCalculator.CostEstimator.Config;
+package com.example.CostEstimaton.Config;
 
 import java.io.IOException;
 import java.text.DecimalFormat;

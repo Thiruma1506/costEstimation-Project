@@ -1,15 +1,15 @@
-package com.ConstructionCalculator.CostEstimator.Service;
+package com.example.CostEstimaton.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.example.CostEstimaton.Repository.CostEstimateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.ConstructionCalculator.CostEstimator.Dto.InputDTO;
-import com.ConstructionCalculator.CostEstimator.Model.CostEstimate;
-import com.ConstructionCalculator.CostEstimator.Repository.CostEstimateRepository;
+import com.example.CostEstimaton.Dto.InputDTO;
+import com.example.CostEstimaton.Model.CostEstimate;
 
 @Service
 public class CostEstimateService {
