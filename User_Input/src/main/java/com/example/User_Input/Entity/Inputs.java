@@ -29,4 +29,5 @@ public class Inputs {
     private String propName;
     private Boolean landclearence;
     private String materialQuality;
+    private Long constructionId;
 }

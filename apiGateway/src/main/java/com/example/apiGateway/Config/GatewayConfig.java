@@ -1,4 +1,4 @@
-package com.example.apiGateway.com.example.apiGateway.Config;
+package com.example.apiGateway.Config;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +18,8 @@ public class GatewayConfig {
                             .uri("http://localhost:8083"))
                     .route("report-service", r -> r.path("/api/reports/**")
                             .uri("http://localhost:8084"))
+                    .route("constructor-service", r -> r.path("/api/constructors/**")
+                            .uri("http://localhost:8086"))
                     .build();
         }
 }
