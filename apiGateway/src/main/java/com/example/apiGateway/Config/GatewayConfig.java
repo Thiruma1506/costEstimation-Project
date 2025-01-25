@@ -1,4 +1,9 @@
+<<<<<<< HEAD:apiGateway/src/main/java/com/example/apiGateway/Config/GatewayConfig.java
 package com.example.apiGateway.Config;
+=======
+package com.example.apiGateway.com.example.apiGateway.Config;
+
+>>>>>>> 31c263d42f5dc190f01dcce7633f7313a4bf0135:apiGateway/src/main/java/com/example/apiGateway/com/example/apiGateway/Config/GatewayConfig.java
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +14,7 @@ public class GatewayConfig {
 
         @Bean
         public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+<<<<<<< HEAD:apiGateway/src/main/java/com/example/apiGateway/Config/GatewayConfig.java
             return builder.routes()
                     .route("input-service", r -> r.path("/api/inputs/**")
                             .uri("http://localhost:8080"))
@@ -21,5 +27,19 @@ public class GatewayConfig {
                     .route("constructor-service", r -> r.path("/api/constructors/**")
                             .uri("http://localhost:8086"))
                     .build();
+=======
+                return builder.routes()
+                                .route("input-service", r -> r.path("/api/inputs/**")
+                                                .uri("http://localhost:8080"))
+                                .route("cost-estimate-service", r -> r.path("/api/cost-estimates/**")
+                                                .uri("http://localhost:8081"))
+                                .route("material-service", r -> r.path("/api/materials/**")
+                                                .uri("http://localhost:8083"))
+                                .route("report-service", r -> r.path("/api/reports/**")
+                                                .uri("http://localhost:8084"))
+                                .route("constructor-service", r -> r.path("/api/constructors/**")
+                                                .uri("http://localhost:8085"))
+                                .build();
+>>>>>>> 31c263d42f5dc190f01dcce7633f7313a4bf0135:apiGateway/src/main/java/com/example/apiGateway/com/example/apiGateway/Config/GatewayConfig.java
         }
 }
