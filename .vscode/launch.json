@@ -1,77 +1,20 @@
 {
-    "configurations": [
-        {
-            "type": "java",
-            "name": "Spring Boot-CostEstimatorApplication<CostEstimator>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.ConstructionCalculator.CostEstimator.CostEstimatorApplication",
-            "projectName": "CostEstimator",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env",
-            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=62398 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=CostEstimator"
-        },
-        {
-            "type": "java",
-            "name": "Spring Boot-UserInputApplication<User_Input>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.example.User_Input.UserInputApplication",
-            "projectName": "User_Input",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env",
-            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=62363 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=User_Input"
-        },
-        {
-            "type": "java",
-            "name": "Spring Boot-ConstructionTypeApplication<constructionType>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.Construction.constructionType.ConstructionTypeApplication",
-            "projectName": "constructionType",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
-        },
-        {
-            "type": "java",
-            "name": "Spring Boot-MaterialsApplication<Materials>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.Construction.Materials.MaterialsApplication",
-            "projectName": "Materials",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env",
-            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=56374 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=Materials"
-        },
-        {
-            "type": "java",
-            "name": "Spring Boot-ReportsServiceApplication<reportsService>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.Construction.reportsService.ReportsServiceApplication",
-            "projectName": "reportsService",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
-        },
-        {
-            "type": "java",
-            "name": "Spring Boot-ApiGatewayApplication<apiGateway>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.example.apiGateway.ApiGatewayApplication",
-            "projectName": "apiGateway",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
-        },
-        {
-            "type": "java",
-            "name": "Spring Boot-ConstructionServiceApplication<ConstructionService>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.example.ConstructionService.ConstructionServiceApplication",
-            "projectName": "ConstructionService",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
-        }
-    ]
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ng serve",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "npm: start",
+      "url": "http://localhost:4200/"
+    },
+    {
+      "name": "ng test",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "npm: test",
+      "url": "http://localhost:9876/debug.html"
+    }
+  ]
 }
